@@ -111,6 +111,12 @@
 
                 line.moveTo(100,y);
 
+                // First day fix
+                if (days.size == 1) {
+                    y = y == 0 ? graphHeight : graphHeight - y * yAxisStep;
+                    line.lineTo(100 + 2 * offset, y -offset);
+                }
+
                 for (let i = 1; i < days.size; i++) {
                     y = days.get(i);
                     y = y == 0 ? graphHeight : graphHeight - y * yAxisStep;
